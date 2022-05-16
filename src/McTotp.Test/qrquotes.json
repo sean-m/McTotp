@@ -1,0 +1,19 @@
+{
+  "quotes": [
+    {
+      "id": 1,
+      "text": "You're only given a little spark of madness and if you lose that, you're nothin'.",
+      "image": "img/quote_1.png"
+    },
+    {
+      "id": 2,
+      "text": "Twitter broke the other day, and a lot of people were going, \"My Thumbs! My thumbs are moving for no reason! What's that?\" \"A book\". <hissing noise> \"Who are you?\" \"Dad. I miss you. Let's talk.\"",
+      "image": "img/quote_2.png"
+    },
+    {
+      "id": 3,
+      "text": "And if they legalize it, they're gonna have to regulate it and they're gonna have to put a warning on a box of joints. It's gonna have to say, \"Surgeon General has determined this will make your music...awesome! Even Yanni. And if you think you liked cartoons before...\"",
+      "image": "img/quote_3.png"
+    }
+  ]
+}
