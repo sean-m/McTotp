@@ -34,6 +34,11 @@ namespace McTotp.QRCode {
                 var ls = new ImageSharpLuminanceSource<Rgba32>(image);
                 var bzer = new HybridBinarizer(ls);
                 var bm = new BinaryBitmap(bzer);
+
+                if (null == bm) {
+                    throw new NullReferenceException("BinaryBitmap from image produced null value.");
+                }
+
                 return reader.decodeMultiple(bm);
             }
         }

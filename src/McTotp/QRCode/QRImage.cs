@@ -22,7 +22,6 @@ namespace McTotp.QRCode {
             if (!String.IsNullOrEmpty(result.First()?.Text)) {
                 content = result.First()?.Text;
             }
-            
         }
     }
 }

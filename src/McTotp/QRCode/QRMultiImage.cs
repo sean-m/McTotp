@@ -18,8 +18,9 @@
             if (null == result) throw new Exception("No QR code found in image.");
             if (allContent is List<string> ac) {
                 foreach (var r in result) {
-                    if (null != r && !String.IsNullOrEmpty(r?.Text)) {
-                        ac.Add(r?.Text);
+                    if (null == r) continue;
+                    if (!String.IsNullOrEmpty(r?.Text)) {
+                        ac.Add(r.Text);
                     }
                 }
             }
