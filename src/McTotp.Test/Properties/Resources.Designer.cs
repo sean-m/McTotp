@@ -61,6 +61,16 @@ namespace McTotp.Test.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.byte[].
+        /// </summary>
+        public static byte[] empty {
+            get {
+                object obj = ResourceManager.GetObject("empty", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         public static byte[] pd_cat {

@@ -1,11 +1,6 @@
 ﻿using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Formats.Png;
 using SixLabors.ImageSharp.PixelFormats;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ZXing;
 using ZXing.Common;
 using ZXing.ImageSharp;

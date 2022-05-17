@@ -8,7 +8,7 @@ using System;
 
 namespace McTotp.Test
 {
-    public class QRTests {
+    public class QRImageTests {
         public class QuoteQRTest {
             public int id { get; set; }
             public string type { get; set; }
@@ -37,7 +37,8 @@ namespace McTotp.Test
                 var bytes = (byte[]?)Properties.Resources.ResourceManager.GetObject(q.image);
                 var image = new QRImage(bytes);
 
-                Assert.IsTrue(string.Equals(q.text, image.content, System.StringComparison.CurrentCulture));
+                Assert.IsTrue(string.Equals(q.text, image.content, StringComparison.CurrentCulture));
+                Assert.IsTrue(string.Equals(q.text, image.allContent.First(), StringComparison.CurrentCulture));
             }
         }
 
@@ -58,22 +59,35 @@ namespace McTotp.Test
             }
         }
 
-
         [Test] 
         public void DetectMultipleCodes() {
             foreach (var q in quotes.Where(x => x.type == "multiple")) {
                 var bytes = (byte[]?)Properties.Resources.ResourceManager.GetObject(q.image);
                 var multi = new QRMultiImage(bytes);
                 Assert.Greater(multi.allContent.Count(), 1);
+                Assert.IsFalse(string.IsNullOrEmpty(multi.content));
             }
         }
-
 
         [Test]
         public void NotAQRCodeImage() {
             var bytes = Properties.Resources.pd_cat;
 
             Assert.Throws<Exception>(() => { new QRImage(bytes); });
+        }
+
+        [Test]
+        public void EmptyQRCodeDoesNotThrow() {
+            var bytes = Properties.Resources.empty;
+            Assert.DoesNotThrow(() => { new QRImage(bytes); });
+        }
+
+        [Test]
+        public void EmptyQRCodeEmptyContent() {
+            var bytes = Properties.Resources.empty;
+            QRImage image = new QRImage(bytes);
+            Assert.IsNotNull(image.content);
+            Assert.IsTrue(string.IsNullOrEmpty(image.content));
         }
     }
 }

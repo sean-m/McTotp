@@ -1,20 +1,6 @@
 ﻿using McTotp.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ZXing;
-using ZXing.ImageSharp;
-using SixLabors.ImageSharp;
-using SixLabors.ImageSharp.Formats;
-using ZXing.Common;
-using SixLabors.ImageSharp.PixelFormats;
-using ZXing.Multi.QrCode;
-using SixLabors.ImageSharp.Formats.Png;
 
-namespace McTotp.QRCode
-{
+namespace McTotp.QRCode {
     public class QRImage : QRImageBase, QRContent
     {
 
